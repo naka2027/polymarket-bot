@@ -2,7 +2,7 @@
 
 [简体中文](./README.md) | **English**
 
-[Download the latest release](../../releases/latest) · [View the public backtest report](./BACKTEST_EN.md) · [Request a trial](https://t.me/polymarket_b)
+[Download the latest release](../../releases/latest) · [View public replay reports](./REPORTS_EN.md) · [Request a trial](https://t.me/polymarket_b)
 
 **A fully automated quantitative trading system built specifically for Polymarket BTC 5-minute Up or Down markets: its independently developed signal strategy determines direction, while the system handles sizing, risk controls, order execution, and tracking on Windows or self-hosted Linux.**
 
@@ -28,25 +28,17 @@
 
 We developed this strategy independently over six months and continue to validate and refine it through historical replay and the latest market data. Several signal families work together: they first identify conditions such as trend continuation, momentum exhaustion, and structural reversal, then review each candidate through its independently maintained shadow state, the current market regime, and post-signal rules. The result is to keep the direction, adjust it, or skip the market. Once direction is settled, dynamic sizing and risk controls use account capital, recent performance, and account conditions to determine the order amount and whether it should be executed.
 
-### Historical behavior of the strategy
+### Public historical evidence
 
-The current public report replays production-side strategy logic candle by candle in chronological order. At the Beijing-time cutoff of 2026-09-01 11:35:
+We preserve separate reports for historical and current releases instead of overwriting older results. The three reports answer different questions:
 
-| Metric | Result |
-| --- | ---: |
-| Reporting interval | 2021-09-01 to 2026-09-01 |
-| Total signals | 18,633 |
-| Executed orders | 18,285 |
-| Strategy STOPs | 348 (1.87%) |
-| Wins / losses | 11,656 / 6,629 |
-| Executed win rate | 63.75% |
-| Standardized net score | +13,479 |
-| Maximum drawdown | -72 |
-| Longest loss streak | 8 |
+| Report | Purpose | Key snapshot |
+| --- | --- | --- |
+| [Current strategy standardized replay](./BACKTEST_EN.md) | Measures signal direction quality and its historical risk path | 146,846 orders, 63.87%, standardized Score +109,880 |
+| [Dynamic sizing and risk replay](./BACKTEST_CAPITAL_EN.md) | Illustrates a capital path on the same current signal set | 400 pUSD initial capital and 21,273,734.6 pUSD ending capital; see methodology and limitations |
+| [Historical V16 release](./BACKTEST_V16_EN.md) | Preserves a traceable result for the older strategy version | 18,285 orders, 63.75%, standardized Score +13,479 |
 
-The report uses a fixed `+4/-5` standardized scoring model with a theoretical break-even win rate of approximately 55.56%. Standardized score and drawdown compare directional quality and the historical path; they are not percentages or realized pUSD PnL. Across the four complete calendar years from 2022 to 2025, executed win rates range from 61.78% to 65.64%. Recent rolling results are maintained in the backtest report.
-
-See the [public backtest report](./BACKTEST_EN.md) for the full methodology, yearly and recent results, drawdown, and limitations. Historical market data were used during strategy research, so the five-year result describes how the current rules behave under chronological replay and the risk path seen in history rather than a wholly untouched independent sample.
+The standardized replay uses fixed `+4/-5` scoring to compare signal quality. The capital replay additionally applies dynamic sizing and common risk controls. These results cannot be combined directly, and neither is a live-account return. See the [public replay report center](./REPORTS_EN.md) for full methodology, annual and recent results, and limitations.
 
 ## 2. Signal strategy, risk, and dynamic-sizing architecture
 
@@ -237,13 +229,13 @@ After first launch, open Settings in the dashboard, choose the run mode, signal 
 | Setting | First-use recommendation | Explanation |
 | --- | --- | --- |
 | Current market | Default BTC 5-minute market | Primary market for the current core strategy |
-| Signal package | Newest package in the current release | Current recommendation: `V4 Final + L2 Opt`; use new defaults after upgrades |
+| Signal package | `Stability Expansion` | The current strategy selection for this release |
 | Entry timing | Post-close confirmation | Pre-close and GTD+FAK require stronger timing, network, and order-state reliability |
 | Size | Set according to capital scale and risk preference | Inspect Current Order Size before enabling dynamic sizing |
 | Daily count/notional | Conservative limits | Caps daily order count and total exposure |
 | Auto redemption/balance maintenance | Off initially | Enable only after separate validation |
 
-> `V4 Final + L2 Opt` is the signal-package name shown in the UI. V16 is the current internal rule revision within that package. They describe different layers and are not two conflicting strategies.
+> Select `Stability Expansion` in the current release.
 
 ### Entry timing and order modes
 
@@ -259,7 +251,7 @@ After a fresh installation, first use of a relevant strategy, or an upgrade that
 
 Keep the application running with a stable network. Start automation only after no required item in the strategy-status area or hover details shows Preparing or Error.
 
-`L2 Off`, `V4 · RS1 Off`, or `Off · Candidates` can be valid prepared states. You do not need to wait for every shadow to become On. After first preparation, normal maintenance processes new closed candles and repairs discontinuities rather than rebuilding the full history every cycle.
+After first preparation, normal maintenance processes new closed candles and repairs discontinuities rather than rebuilding the full history every cycle.
 
 If preparation remains stuck, check Binance and Polymarket connectivity, status details, fault logs, disk space, and system time. Avoid repeatedly killing the process. Contact [Telegram @polymarket_b](https://t.me/polymarket_b) if recovery still fails.
 
@@ -273,7 +265,7 @@ Use the screenshot below to locate the relevant settings. Follow the defaults in
 | --- | --- |
 | Run mode | `live` |
 | Base poll interval | 15 seconds |
-| Signal package | Current release's latest `V4 Final + L2 Opt` |
+| Signal package | `Stability Expansion` |
 | Data source | Realtime aggregation |
 | Entry timing/order mode | GTD+FAK Dedicated / GTD+FAK |
 | Minimum order | 5 pUSD |
