@@ -34,11 +34,15 @@ We preserve separate reports for historical and current releases instead of over
 
 | Report | Purpose | Key snapshot |
 | --- | --- | --- |
-| [Current strategy standardized replay](./BACKTEST_EN.md) | Measures signal direction quality and its historical risk path | 146,846 orders, 63.87%, standardized Score +109,880 |
-| [Dynamic sizing and risk replay](./BACKTEST_CAPITAL_EN.md) | Illustrates a capital path on the same current signal set | 400 pUSD initial capital and 21,273,734.6 pUSD ending capital; see methodology and limitations |
-| [Historical V16 release](./BACKTEST_V16_EN.md) | Preserves a traceable result for the older strategy version | 18,285 orders, 63.75%, standardized Score +13,479 |
+| [Stability Expansion Current strategy standardized replay](./BACKTEST_EN.md) | Measures signal direction quality and its historical risk path | 146,846 orders, 63.87%, standardized Score +109,880 |
+| [Stability Expansion Dynamic sizing and risk replay](./BACKTEST_CAPITAL_EN.md) | Illustrates a capital path on the same current signal set | 400 pUSD initial capital and 21,273,734.6 pUSD ending capital; see methodology and limitations |
+| [V4 Final + L2 Opt V16 release](./BACKTEST_V16_EN.md) | Preserves a traceable result for the older strategy version | 18,285 orders, 63.75%, standardized Score +13,479 |
 
 The standardized replay uses fixed `+4/-5` scoring to compare signal quality. The capital replay additionally applies dynamic sizing and common risk controls. These results cannot be combined directly, and neither is a live-account return. See the [public replay report center](./REPORTS_EN.md) for full methodology, annual and recent results, and limitations.
+
+The latest **Stability Expansion** strategy package has not yet undergone extensive long-term validation. We recommend running it in simulation mode first to verify that its strategy state, signal performance, and overall stability meet expectations before considering live trading based on your own risk tolerance.
+
+For live trading, we recommend using the **V4 Final + L2 Opt V16** strategy package with the recommended configuration. This does not constitute any guarantee or promise of future returns.
 
 ## 2. Signal strategy, risk, and dynamic-sizing architecture
 
@@ -229,13 +233,13 @@ After first launch, open Settings in the dashboard, choose the run mode, signal 
 | Setting | First-use recommendation | Explanation |
 | --- | --- | --- |
 | Current market | Default BTC 5-minute market | Primary market for the current core strategy |
-| Signal package | `Stability Expansion` | The current strategy selection for this release |
+| Signal package | `V4 Final + L2 Opt` | The current strategy selection for this release |
 | Entry timing | Post-close confirmation | Pre-close and GTD+FAK require stronger timing, network, and order-state reliability |
 | Size | Set according to capital scale and risk preference | Inspect Current Order Size before enabling dynamic sizing |
 | Daily count/notional | Conservative limits | Caps daily order count and total exposure |
 | Auto redemption/balance maintenance | Off initially | Enable only after separate validation |
 
-> Select `Stability Expansion` in the current release.
+> Select `V4 Final + L2 Opt` in the current release.
 
 ### Entry timing and order modes
 
@@ -265,7 +269,7 @@ Use the screenshot below to locate the relevant settings. Follow the defaults in
 | --- | --- |
 | Run mode | `live` |
 | Base poll interval | 15 seconds |
-| Signal package | `Stability Expansion` |
+| Signal package | `V4 Final + L2 Opt` |
 | Data source | Realtime aggregation |
 | Entry timing/order mode | GTD+FAK Dedicated / GTD+FAK |
 | Minimum order | 5 pUSD |
