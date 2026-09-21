@@ -8,9 +8,9 @@ This directory preserves two replay views for the current strategy and one histo
 
 | Report | Purpose | Read first |
 | --- | --- | ---: |
-| [Current strategy standardized replay](./BACKTEST_EN.md) | Evaluates directional quality, stability, and historical risk using uniform `+4/-5` scoring | 1 |
-| [Dynamic sizing and risk replay](./BACKTEST_CAPITAL_EN.md) | Applies production sizing and risk logic to the same signals to illustrate an idealized capital path | 2 |
-| [Historical V16 replay](./BACKTEST_V16_EN.md) | Preserves traceable results for the previous strategy release; it is not the current recommendation | 3 |
+| [Stability Expansion Current strategy standardized replay](./BACKTEST_EN.md) | Evaluates directional quality, stability, and historical risk using uniform `+4/-5` scoring | 1 |
+| [Stability Expansion Dynamic sizing and risk replay](./BACKTEST_CAPITAL_EN.md) | Applies production sizing and risk logic to the same signals to illustrate an idealized capital path | 2 |
+| [V4 Final + L2 Opt V16 replay](./BACKTEST_V16_EN.md) | Preserves traceable results for the previous strategy release; it is not the current recommendation | 3 |
 
 ## How to read the two current reports
 
