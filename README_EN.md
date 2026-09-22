@@ -271,7 +271,7 @@ Use the screenshot below to locate the relevant settings. Follow the defaults in
 | Base poll interval | 15 seconds |
 | Signal package | `V4 Final + L2 Opt` |
 | Data source | Realtime aggregation |
-| Entry timing/order mode | GTD+FAK Dedicated / GTD+FAK |
+| Entry timing/order mode | Trade After Close / FAK |
 | Minimum order | 5 pUSD |
 | Dynamic sizing | Inspect Current Order Size before enabling |
 | PnL direction gate | **Off by default** |
