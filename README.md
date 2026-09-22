@@ -269,7 +269,7 @@ sha256sum ./PolymarketCloud-linux-x64-centos7.tar.gz
 | 常规轮询间隔 | 15 秒 |
 | 信号策略包 | `V4 Final + L2 Opt` |
 | 数据来源 | 实时聚合 |
-| 下单时机/模式 | GTD+FAK 专用 / GTD+FAK |
+| 下单时机/模式 | 收盘后下单 / FAK |
 | 单笔最小金额 | 5 pUSD |
 | 动态仓位 | 开启前检查当前下单仓位 |
 | 盈亏方向闸门 | **默认关闭** |
