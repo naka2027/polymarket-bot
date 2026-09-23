@@ -6,6 +6,10 @@
 
 **A fully automated quantitative trading system built specifically for Polymarket BTC 5-minute Up or Down markets: its independently developed signal strategy determines direction, while the system handles sizing, risk controls, order execution, and tracking on Windows or self-hosted Linux.**
 
+> **Feature update: quantitative trading for the OKX BTCUSDT perpetual swap is now supported.**
+>
+> The release adds an independent OKX futures automation path with paper and live modes, isolated margin, dynamic leverage, position and protective-order maintenance, recovery, and order records. It can run independently from Polymarket automation. See the [public OKX BTC futures backtest report](./BACKTEST_OKX_EN.md) for the full methodology, results, and limitations.
+
 > **Before you use it**
 >
 > This is independently developed third-party software and is not affiliated with, authorized by, or endorsed by Polymarket. Automated trading does not guarantee profit. Check the rules that apply in your region and use only capital you can afford to lose.
