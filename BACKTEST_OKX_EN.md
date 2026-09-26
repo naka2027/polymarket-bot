@@ -2,7 +2,7 @@
 
 [简体中文](./BACKTEST_OKX.md) | **English**
 
-[All reports](./REPORTS_EN.md) · [Product overview](./README_EN.md)
+[Strategy overview](./STRATEGY_OKX_EN.md) · [All reports](./REPORTS_EN.md) · [Product overview](./README_EN.md)
 
 > This report replays the current futures signal and execution logic in chronological order to examine direction, execution paths, leverage state, and historical risk. Its capital curves are high-risk, idealized research models—not live account statements, realizable returns, return promises, or forecasts.
 

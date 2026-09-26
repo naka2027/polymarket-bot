@@ -8,7 +8,7 @@
 
 > **Feature update: quantitative trading for the OKX BTCUSDT perpetual swap is now supported.**
 >
-> The release adds an independent OKX futures automation path with paper and live modes, isolated margin, dynamic leverage, position and protective-order maintenance, recovery, and order records. It can run independently from Polymarket automation. See the [public OKX BTC futures backtest report](./BACKTEST_OKX_EN.md) for the full methodology, results, and limitations.
+> The release adds an independent OKX futures automation path with paper and live modes, isolated margin, dynamic leverage, position and protective-order maintenance, recovery, and order records. It can run independently from Polymarket automation. Start with the [public OKX BTC futures strategy overview](./STRATEGY_OKX_EN.md), then see the [public OKX BTC futures backtest report](./BACKTEST_OKX_EN.md) for the full replay methodology, results, and limitations.
 
 > **Before you use it**
 >
@@ -17,6 +17,9 @@
 ![Polymarket dashboard in English](./assets/polymarket-dashboard-en.png)
 
 ## Contents
+
+- [OKX BTC futures strategy overview (public edition)](./STRATEGY_OKX_EN.md)
+- [Public OKX BTC futures backtest report](./BACKTEST_OKX_EN.md)
 
 1. [Strategy core and historical behavior](#1-strategy-core-and-historical-behavior)
 2. [Signal strategy, risk, and dynamic-sizing architecture](#2-signal-strategy-risk-and-dynamic-sizing-architecture)
