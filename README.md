@@ -317,7 +317,45 @@ Linux：x86_64，推荐使用 Ubuntu LTS 部署。部署用户需要对程序、
 
 ### Linux 云端快速部署
 
-云端包通常包含：
+推荐使用仓库根目录长期维护的 `install-cloud.sh` 完成首次部署。脚本会从 GitHub Releases 获取当前品牌的最新正式云端包，校验并安装到固定目录，同时建立独立的程序版本、配置、数据库和日志目录。
+
+默认部署（默认安装到 `/opt/polymarket-cloud`，自动选择 systemd 或独立守护方式）：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/naka2027/polymarket-bot/main/install-cloud.sh \
+  | sudo bash -s -- install
+```
+
+需要自定义安装目录时：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/naka2027/polymarket-bot/main/install-cloud.sh \
+  | sudo bash -s -- \
+  --install-dir /your/path/polymarket-cloud \
+  install
+```
+
+使用宝塔进程守护时，建议直接部署到宝塔常用目录并明确选择宝塔模式：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/naka2027/polymarket-bot/main/install-cloud.sh \
+  | sudo bash -s -- \
+  --install-dir /www/wwwroot/polymarket-cloud \
+  --supervisor baota \
+  install
+```
+
+一键部署会完成软件安装、目录初始化并启动云端程序。宝塔模式首次部署后，还需要在宝塔“进程守护管理器”中登记外部守护命令：
+
+```bash
+bash /www/wwwroot/polymarket-cloud/bt-cloud-guard.sh
+```
+
+运行目录填写 `/www/wwwroot/polymarket-cloud`，并开启开机启动和异常退出后自动重启。宝塔应始终守护 `bt-cloud-guard.sh`，不要直接守护内部 worker。
+
+安装后的目录会区分软件版本和长期数据。后续在线更新只切换软件版本，继续保留原有配置、数据库和日志。首次打开 Web 页面后完成激活和管理员初始化，再通过“配置项”页面保存配置并检查影子状态。
+
+云端正式包通常包含：
 
 ```text
 PolymarketCloud
@@ -326,20 +364,9 @@ bt-cloud-guard.sh
 CLOUD_DEPLOYMENT_CN.md
 ```
 
-```bash
-mkdir -p /www/wwwroot/polymarket-cloud
-tar -xzf /path/to/PolymarketCloud-linux-x64-centos7.tar.gz \
-  -C /www/wwwroot/polymarket-cloud
-cd /www/wwwroot/polymarket-cloud
-chmod +x ./PolymarketCloud ./bt-cloud-guard.sh
-bash ./bt-cloud-guard.sh
-```
-
-始终建议通过 `bt-cloud-guard.sh` 启动，不要直接守护内部 worker。首次打开 Web 页面后完成激活和管理员初始化，再通过“配置项”页面保存配置并检查影子状态。
-
 云端敏感凭证在服务器本地加密保存。默认监听 `127.0.0.1:8765`；生产环境应使用 HTTPS 域名和 Nginx/宝塔反向代理，不要将未经保护的管理端口暴露到公网。
 
-完整的宝塔守护、HTTPS 和更新步骤见云端包内 `CLOUD_DEPLOYMENT_CN.md`。
+完整的 HTTPS 和运行维护说明见云端包内 `CLOUD_DEPLOYMENT_CN.md`。旧版云端部署的迁移与回退方式属于版本相关操作，请严格按照对应 [GitHub Release](../../releases) 的更新说明执行，README 不提供通用迁移命令。
 
 ## 6. 运行中你要看什么
 
@@ -368,9 +395,13 @@ bash ./bt-cloud-guard.sh
 
 ### 更新与恢复
 
-Windows 更新时，先停止自动化并完全退出程序，再运行新版安装包直接覆盖安装。重新打开后检查设置和策略状态；如果版本触发影子重建，等待必需状态就绪后再启动自动化。
+程序检测到新版本时，会在控制台版本号附近显示“更新”入口。开始更新前先确认没有需要人工处理的订单或异常状态，并保持页面和网络连接稳定。
 
-Linux 更新时，依次停止自动化、停止守护进程、替换新版云端程序文件，再重新启动守护进程。替换过程中保留原有设置、订单记录和状态数据。
+Windows 可以点击“更新”进入升级流程，也可以从对应 Release 下载新版安装包直接覆盖安装。更新程序会退出旧版本、安装并启动新版本；重新打开后检查版本号、设置和策略状态。如果本次版本触发影子重建，等待必需状态就绪后再启动自动化。
+
+采用新版目录结构部署的 Linux 云端版可以直接点击“更新”。升级维护进程会下载并校验 Release 成品包，停止当前程序、切换软件版本，再通过已配置的 systemd、宝塔或独立守护方式重新启动。切换期间页面会显示升级进度；服务短暂停止属于升级流程的一部分，请等待页面自动恢复，不要反复提交更新。
+
+正常在线更新只替换软件版本，不覆盖长期保存的配置、数据库和日志。旧版云端目录的首次迁移、特定版本检查项以及必要的回退命令，以对应 [GitHub Release](../../releases) 的更新说明为准，不要将其他版本的迁移或回退命令混用。
 
 ## 7. 账户凭证、安全与隐私
 

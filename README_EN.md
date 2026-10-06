@@ -319,7 +319,45 @@ Download, verify, and install `PolymarketSetup.exe`. After launch, follow the fi
 
 ### Linux cloud quick deployment
 
-The cloud archive normally contains:
+For a first deployment, use the repository-root `install-cloud.sh`, which is kept as the stable bootstrap entry point. It obtains the latest official cloud build for this brand from GitHub Releases, verifies it, installs it under a fixed layout, and keeps application versions separate from persistent configuration, database, and log data.
+
+Default deployment (installs to `/opt/polymarket-cloud` and automatically selects systemd or standalone supervision):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/naka2027/polymarket-bot/main/install-cloud.sh \
+  | sudo bash -s -- install
+```
+
+To use a custom installation directory:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/naka2027/polymarket-bot/main/install-cloud.sh \
+  | sudo bash -s -- \
+  --install-dir /your/path/polymarket-cloud \
+  install
+```
+
+For BT Panel process supervision, deploy to the preferred panel directory and explicitly select BT Panel mode:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/naka2027/polymarket-bot/main/install-cloud.sh \
+  | sudo bash -s -- \
+  --install-dir /www/wwwroot/polymarket-cloud \
+  --supervisor baota \
+  install
+```
+
+The one-line command installs the software, initializes its directories, and starts the cloud application. After the first BT Panel deployment, add this external guard command to BT Panel's Process Guard Manager:
+
+```bash
+bash /www/wwwroot/polymarket-cloud/bt-cloud-guard.sh
+```
+
+Set the working directory to `/www/wwwroot/polymarket-cloud`, then enable start-on-boot and restart-on-exit. BT Panel should always supervise `bt-cloud-guard.sh`, never an internal worker directly.
+
+The installed layout separates application releases from persistent data. Later online updates switch only the application version and retain the existing configuration, database, and logs. On first Web access, complete activation and administrator initialization, save the configuration from Settings, and inspect shadow preparation.
+
+The official cloud archive normally contains:
 
 ```text
 PolymarketCloud
@@ -328,20 +366,9 @@ bt-cloud-guard.sh
 CLOUD_DEPLOYMENT_CN.md
 ```
 
-```bash
-mkdir -p /www/wwwroot/polymarket-cloud
-tar -xzf /path/to/PolymarketCloud-linux-x64-centos7.tar.gz \
-  -C /www/wwwroot/polymarket-cloud
-cd /www/wwwroot/polymarket-cloud
-chmod +x ./PolymarketCloud ./bt-cloud-guard.sh
-bash ./bt-cloud-guard.sh
-```
-
-Always start through `bt-cloud-guard.sh`; do not directly supervise an internal worker. On first Web access, complete activation and administrator initialization, save the configuration from Settings, and inspect shadow preparation.
-
 Cloud credentials are encrypted locally on the server. The dashboard listens on `127.0.0.1:8765` by default. Production access should use an HTTPS domain and Nginx/control-panel reverse proxy. Never expose an unprotected management port to the public Internet.
 
-See the deployment guide inside the cloud archive for process-supervision, HTTPS, and update procedures.
+See `CLOUD_DEPLOYMENT_CN.md` inside the cloud archive for HTTPS and operational guidance. Migration and rollback for legacy cloud layouts are release-specific procedures; follow the update notes in the corresponding [GitHub Release](../../releases) rather than using a generic migration command from the README.
 
 ## 6. What to watch while it runs
 
@@ -370,9 +397,13 @@ A restarted process does not imply that every external open order disappeared. A
 
 ### Updates and recovery
 
-On Windows, stop automation and fully exit the application, then run the new installer directly over the existing installation. After reopening, inspect settings and strategy state. If the release triggers a shadow rebuild, wait until required states are ready before starting automation.
+When a newer version is available, the dashboard shows an Update entry beside the current version. Before starting, confirm that no order or fault requires manual attention, then keep the page and network connection available during the update.
 
-On Linux, stop automation, stop the guard process, replace the cloud program files, and then restart the guard. Preserve existing settings, order history, and state data while replacing the files.
+On Windows, select Update to enter the upgrade flow, or download the new installer from the corresponding Release and install it over the existing copy. The updater exits the old version, installs the new build, and starts it again. After reopening, verify the version, settings, and strategy state. If the release triggers a shadow rebuild, wait until required states are ready before starting automation.
+
+Linux cloud installations using the current directory layout can also select Update directly. The maintenance process downloads and verifies the Release artifact, stops the current application, switches the application version, and starts it again through the configured systemd, BT Panel, or standalone guard path. The page displays upgrade progress while the service switches; a brief service interruption is part of the upgrade, so wait for automatic recovery and do not submit the update repeatedly.
+
+A normal online update replaces only the application version and preserves persistent configuration, database, and logs. For a first migration from a legacy cloud layout, release-specific checks, or rollback commands, follow the notes in the corresponding [GitHub Release](../../releases). Do not reuse migration or rollback commands from a different release.
 
 ## 7. Credentials, security, and privacy
 
