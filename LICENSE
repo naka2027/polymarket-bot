@@ -1,0 +1,75 @@
+PROPRIETARY SOFTWARE AND REPOSITORY CONTENT NOTICE
+Copyright © 2026. All rights reserved.
+
+1. SCOPE
+This public repository contains documentation, research reports,
+images, installation and migration scripts, and links to official
+binary releases. The complete trading-strategy source code is not
+published here. Public access does not make the materials open source.
+
+2. PERMITTED OFFICIAL USE
+You may read the public documentation and download and execute the
+unaltered official installer/migration scripts for the limited purpose
+of installing, updating, migrating, or operating an official release
+on systems you are authorized to manage. Necessary local copies for
+that purpose are permitted. Use of the proprietary application is
+subject to the activation/license actually issued and any separate
+applicable software terms.
+
+3. RESERVED RIGHTS
+Except for the limited use above, applicable law, and permissions
+required by the repository hosting service's terms, no permission is
+granted to modify, republish, mirror, redistribute, sublicense, resell,
+or incorporate the proprietary software or repository materials into
+other products without prior written authorization. No rights to any
+unpublished source code, proprietary signal rules, or internal research
+are granted by the repository's publication.
+
+4. THIRD-PARTY RIGHTS
+Names, marks, libraries, services, and other third-party materials
+remain subject to their respective owners' rights and licenses.
+Nothing in this notice changes those separate terms.
+
+5. RESEARCH AND RISK
+Published replay, backtest, and simulation results are research
+materials, not actual-account performance claims or guarantees.
+Trading may involve substantial or total capital loss. Materials are
+provided without any guarantee of fitness, uninterrupted operation,
+or trading performance, to the extent permitted by applicable law.
+
+For licensing or redistribution permission, use the official contact
+channel listed in README.md / README_EN.md.
+
+------------------------------------------------------------------------
+
+专有软件及仓库内容使用说明
+版权所有 © 2026。保留所有权利。
+
+一、适用范围
+本公开仓库包含技术文档、研究报告、图片、安装与迁移脚本，以及
+正式程序发行包的下载入口；不包含完整的专有交易策略源代码。
+仓库公开可访问，不代表采用开源许可证。
+
+二、允许的官方使用
+允许阅读公开文档，并为在有权管理的设备或服务器上安装、更新、
+迁移或运行正式发行版本，下载、执行未经修改的官方安装/迁移脚本，
+以及保留为实现该用途所必需的本地副本。专有程序的实际使用范围，
+以获得的激活授权及其他适用软件条款为准。
+
+三、保留的权利
+除上述有限使用许可、适用法律或代码托管平台服务条款允许的行为外，
+未经事先书面授权，不得擅自修改、再发布、镜像、再分发、转授权、
+转售专有软件及仓库资料，或将其纳入其他产品。仓库公开不授予任何
+未公开策略源码、内部信号规则或研究实现的使用权。
+
+四、第三方权利
+第三方的商标、名称、软件库、服务及其他内容仍受各自权利及许可
+约束，本说明不改变其独立条款。
+
+五、研究与风险
+历史回放、回测和模拟结果仅供研究参考，不代表真实账户收益或未来
+收益保证。交易存在重大亏损乃至全部资金损失风险。在适用法律允许
+的范围内，不对适销性、特定用途适用性、运行不中断或交易业绩作出保证。
+
+如需取得其他使用、再分发或集成的书面许可，请通过
+README.md / README_EN.md 中的官方联系渠道咨询。
