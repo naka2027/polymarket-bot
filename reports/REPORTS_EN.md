@@ -14,7 +14,7 @@ The recommended standard strategy for live trading. `V16` is an internal branch 
 
 | Report | Purpose |
 | --- | --- |
-| [V4 Final + L2 Opt · Standardized replay (2026-09-01)](./BACKTEST_V16_EN.md) | Uniform `+4/-5` scoring, year-by-year stability, and historical drawdown |
+| [V4 Final + L2 Opt · Standardized replay (2026-10-11)](./BACKTEST_V16_EN.md) | Uniform `+4/-5` scoring, year-by-year stability, and historical drawdown |
 
 ### Stability Expansion · Latest strategy
 
