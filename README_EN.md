@@ -15,6 +15,7 @@
 <p align="center">
   <a href="https://github.com/naka2027/polymarket-bot/releases/latest"><strong>Latest release</strong></a> ·
   <a href="./docs/en/quick-start.md"><strong>Quick start</strong></a> ·
+  <a href="./docs/en/faq.md"><strong>FAQ</strong></a> ·
   <a href="https://t.me/polymarket_b"><strong>Activation &amp; licensing</strong></a> ·
   <a href="./reports/REPORTS_EN.md"><strong>Research reports</strong></a>
 </p>
@@ -65,6 +66,18 @@ This diagram shows the general workflow. For the separate Polymarket and OKX exe
 
 After installation, follow [Quick Start & Activation](./docs/en/quick-start.md) for first-time setup. Paper-mode validation is recommended before live use. See [Installation & Deployment](./docs/en/deployment.md) for the steps.
 
+## ❓ Frequently Asked Questions
+
+| Common question | Short answer |
+| --- | --- |
+| [Can I use it without coding?](./docs/en/faq.md#q03) | Windows has an installer; Linux has command-based setup. Activation, configuration, and paper validation are still needed. |
+| [Is it open source or completely free?](./docs/en/faq.md#q05) | The proprietary strategy source is not published; license scope depends on the issued authorization. |
+| [Why isn't the running bot placing orders?](./docs/en/faq.md#q13) | It may deliberately skip a window, be unready, hit risk limits, or face an external fault. |
+| [Can OKX automation affect existing positions or orders?](./docs/en/faq.md#q15) | Check the instrument's positions and orders before enabling exclusive automated maintenance. |
+| [Do backtests or paper results prove live profitability?](./docs/en/faq.md#q18) | No; fills, fees, latency, and research assumptions may make live outcomes different. |
+
+[**Read all 26 FAQ answers →**](./docs/en/faq.md)
+
 ## 📊 Strategy research & historical replays
 
 A compact overview of **historical replay results** for the independently developed strategies. Full reports cover yearly performance, recent windows, drawdown paths, and validation methods.
@@ -113,7 +126,8 @@ V4 Final + L2 Opt is the current standard strategy recommended for live use. Sta
 | Windows installation, Linux / BT Panel deployment, HTTPS proxying & updates | [Installation & Deployment](./docs/en/deployment.md) |
 | Post-install activation, configuration and reference live-settings screenshot | [Quick Start & Activation](./docs/en/quick-start.md) |
 | Public system design and runtime flow | [System Architecture](./docs/en/architecture.md) |
-| Runtime monitoring, troubleshooting, credentials and FAQ | [Operations & Security](./docs/en/operations-security.md) |
+| Questions about the product, setup, licensing, trading modes, and risk | [FAQ](./docs/en/faq.md) |
+| Runtime monitoring, troubleshooting, and credentials | [Operations & Security](./docs/en/operations-security.md) |
 | Public OKX strategy design | [OKX Strategy Overview](./docs/en/okx-strategy.md) |
 | Historical strategy and futures research | [Report Center](./reports/REPORTS_EN.md) |
 

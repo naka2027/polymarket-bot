@@ -1,4 +1,4 @@
-# Operations, Credential Security & FAQ
+# Operations, Credential Security & Quick Troubleshooting
 
 [← Overview](../../README_EN.md) · [Documentation](./README.md)
 
@@ -47,33 +47,22 @@ The Polymarket live configuration requires only three fields in the dashboard:
 
 The wallet private key and Relayer API Key are encrypted on the Windows device or Linux server. The Relayer API Key Address is not a private key, but should still be hidden in public screenshots.
 
-## FAQ and support
+## Operational quick checks and support
 
-### Why should automation not start immediately after first launch?
+Detailed answers live in the [**full FAQ (26 questions)**](./faq.md). This section keeps only an operational triage guide so the same answers need not be maintained in two places.
 
-Some strategies must prepare historical shadow state. Start only after no required item shows Preparing or Error. A shadow showing Off can be valid and does not need to become On.
-
-### Why did the bot place no order?
-
-The strategy may have skipped the window, preparation may be incomplete, risk controls may have blocked the order, or an external condition may have failed. Inspect the current status, order history, and logs together.
-
-### Does closing the application cancel every order?
-
-Not necessarily. Closing a page, stopping automation, or killing the process does not guarantee that every external order or position has been cancelled or completed. Inspect the application and Polymarket account afterward.
-
-### Why can actual fills differ from replay results?
-
-Live orders are affected by the order book, fill price, latency, slippage, partial fills, fees, and API state. Pre-close estimation may also differ from the final closed structure. The strategy primarily references Binance market data, while the final Polymarket result follows the rules and designated source shown on the corresponding market page.
-
-### Can the application bypass geographic restrictions?
-
-No. It is not designed to bypass platform geographic restrictions, account restrictions, compliance obligations, or applicable law.
+| Observed situation | Check first |
+| --- | --- |
+| Preparing on first launch | Required state, historical-data continuity, connectivity, and disk; see [state preparation](./quick-start.md). |
+| Automation is running but no orders appear | Skip reason, shadow readiness, risk limits, order history, and logs; see [FAQ: no orders](./faq.md#q13). |
+| External exposure remains after stop/restart | Exchange-side open orders, partial fills, positions, and protection; see [FAQ: stopping](./faq.md#q14). |
+| Fill results differ from a historical replay | Price, latency, fees, partial fills, and market rules; see [FAQ: paper vs live](./faq.md#q18). |
 
 ### How to request support
 
-Use GitHub Issues or [Telegram @polymarket_b](https://t.me/polymarket_b). Include the software version, operating system, current run mode, occurrence time, redacted logs, reproduction steps, and screenshots.
+Use [GitHub Issues](https://github.com/naka2027/polymarket-bot/issues) or [Telegram @polymarket_b](https://t.me/polymarket_b). Include the software version, operating system, current run mode, occurrence time, redacted logs, reproduction steps, and screenshots.
 
-Before submitting, remove or obscure private keys, seed phrases, Relayer API Keys and addresses, server and administrator passwords, cookies, and tokens.
+Before submitting, remove or obscure private keys, seed phrases, Relayer API Keys and addresses, server and administrator passwords, device codes, cookies, and tokens.
 
 ## Activation and licensing
 

@@ -15,6 +15,7 @@
 <p align="center">
   <a href="https://github.com/naka2027/polymarket-bot/releases/latest"><strong>下载最新版本</strong></a> ·
   <a href="./docs/zh-CN/quick-start.md"><strong>快速开始</strong></a> ·
+  <a href="./docs/zh-CN/faq.md"><strong>常见问题 FAQ</strong></a> ·
   <a href="https://t.me/polymarket_b"><strong>激活授权</strong></a> ·
   <a href="./reports/REPORTS.md"><strong>研究报告</strong></a>
 </p>
@@ -65,6 +66,18 @@ flowchart TD
 
 安装完成后，阅读 [快速开始与激活授权](./docs/zh-CN/quick-start.md) 进行首次配置；建议先在模拟模式下验证。详细步骤以 [安装与部署](./docs/zh-CN/deployment.md) 为准。
 
+## ❓ 先看常见问题
+
+| 你可能想问 | 快速回答 |
+| --- | --- |
+| [不会写代码也能使用吗？](./docs/zh-CN/faq.md#q03) | Windows 有安装包；Linux 提供命令部署，但仍需激活、配置与模拟验证。 |
+| [这是开源或完全免费的软件吗？](./docs/zh-CN/faq.md#q05) | 完整专有源码未公开；授权范围与期限以签发信息为准。 |
+| [为什么机器人运行了却不下单？](./docs/zh-CN/faq.md#q13) | 可能是主动跳过、状态未就绪、风控阻止或外部异常。 |
+| [OKX 自动化会影响已有仓位或订单吗？](./docs/zh-CN/faq.md#q15) | 启用前必须检查该品种仓位和订单，系统会独占维护相关状态。 |
+| [回测与 Paper 结果能代表实盘盈利吗？](./docs/zh-CN/faq.md#q18) | 不能；成交、费用、延迟和研究假设都可能导致差异。 |
+
+[**查看完整 FAQ（26 个问题）→**](./docs/zh-CN/faq.md)
+
 ## 📊 策略研究与历史回放
 
 这里汇总自研策略的**历史回放关键指标**。完整报告还包含年度表现、近期窗口、回撤路径和验证方法。
@@ -113,7 +126,8 @@ V4 Final + L2 Opt 为当前实盘建议使用的标准策略。Stability Expansi
 | Windows 安装、云端一键/宝塔部署、反向代理与更新 | [安装与部署](./docs/zh-CN/deployment.md) |
 | 安装后的激活、首次配置与实盘建议截图 | [快速开始与激活授权](./docs/zh-CN/quick-start.md) |
 | 公开技术框架、系统工作流程 | [系统架构](./docs/zh-CN/architecture.md) |
-| 运行监控、故障处理、账户安全、FAQ | [运行维护与安全](./docs/zh-CN/operations-security.md) |
+| 用户常见问题：产品、安装、授权、运行、研究与风险 | [常见问题 FAQ](./docs/zh-CN/faq.md) |
+| 运行监控、故障处理和账户安全 | [运行维护与安全](./docs/zh-CN/operations-security.md) |
 | OKX 策略说明（公开版） | [OKX 策略公开说明](./docs/zh-CN/okx-strategy.md) |
 | 所有历史研究报告 | [报告中心](./reports/REPORTS.md) |
 
