@@ -89,11 +89,11 @@ Both strategies use the same **standardized `+4 / -5 / 0` scoring convention**, 
 | Replay metric | **V4 Final + L2 Opt** | **Stability Expansion** |
 | --- | ---: | ---: |
 | Positioning | **Standard · Recommended for live trading** | **Latest · Long-term live validation pending · Use with caution** |
-| Historical period | 2021-09-01 to 2026-09-01 | 2021-09-10 to 2026-09-12 |
-| Executed selections | **18,285** | **146,846** |
-| Historical win rate | **63.75%** | **63.87%** |
-| Standardized net score | +13,479 | +109,880 |
-| Max drawdown (score points) | -72 | -88 |
+| Historical period | 2021-07-24 to 2026-10-11 | 2021-09-10 to 2026-09-12 |
+| Executed selections | **15,361** | **146,846** |
+| Historical win rate | **67.31%** | **63.87%** |
+| Standardized net score | +16,255 | +109,880 |
+| Max drawdown (score points) | -52 | -88 |
 | Longest losing streak | 8 trades | 9 trades |
 | Full reports | [Standardized replay](./reports/BACKTEST_V16_EN.md) | [Standardized replay](./reports/BACKTEST_EN.md) · [Dynamic sizing & risk replay](./reports/BACKTEST_CAPITAL_EN.md) |
 
