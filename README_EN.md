@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/naka-mascot-transparent.png" alt="Naka mascot" width="180">
+</p>
+
 <h1 align="center">Polymarket BTC 5m Automated Trading Bot</h1>
 
 <p align="center"><strong>Polymarket Up / Down · OKX BTCUSDT Perpetual</strong></p>
