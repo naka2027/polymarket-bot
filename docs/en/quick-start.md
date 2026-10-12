@@ -18,6 +18,8 @@ This guide starts **after the application has been installed and can launch**. I
 
 The first launch displays a device code. Send it to [Telegram @polymarket_b](https://t.me/polymarket_b) to request activation authorization. Authorization is associated with the current device; duration and scope follow the issued license. Never post a device code, wallet credential, or account information in GitHub Issues.
 
+For license duration, usage terms and related risks, see the [Software Licensing Terms & Disclaimer](./licensing.md).
+
 ### Complete the basic setup
 
 After first launch, open Settings in the dashboard, choose the run mode, signal package, sizing, and risk limits, then select Save Settings. Sensitive credentials are encrypted locally.

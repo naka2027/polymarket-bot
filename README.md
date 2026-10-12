@@ -44,6 +44,19 @@
 
 Polymarket 与 OKX 使用各自的信号策略和交易链路。公开的系统设计参见 [系统架构](./docs/zh-CN/architecture.md) 与 [OKX 策略说明](./docs/zh-CN/okx-strategy.md)。
 
+## 💳 软件授权与价格
+
+软件安装后**必须完成设备激活授权**才能使用。可申请 7 天体验授权；正式授权按有效期计费。国内人民币与海外 USDT 为分别固定的挂牌价，并非实时汇率换算。
+
+| 授权类型 | 有效期 | 国内价格 | 海外价格 |
+| --- | --- | ---: | ---: |
+| 体验授权 | 7 天 | 免费 | Free |
+| 月卡 | 30 天 | ¥899 | 129 USDT |
+| 季卡 | 90 天 | ¥2,399 | 349 USDT |
+| 年卡 | 365 天 | ¥7,999 | 1,199 USDT |
+
+购买或激活前，请阅读 [软件授权说明与免责声明](./docs/zh-CN/licensing.md)。
+
 ## 🧩 系统怎样工作
 
 ```mermaid
@@ -129,6 +142,7 @@ V4 Final + L2 Opt 为当前实盘建议使用的标准策略。Stability Expansi
 | --- | --- |
 | Windows 安装、云端一键/宝塔部署、反向代理与更新 | [安装与部署](./docs/zh-CN/deployment.md) |
 | 安装后的激活、首次配置与实盘建议截图 | [快速开始与激活授权](./docs/zh-CN/quick-start.md) |
+| 软件授权、价格及免责声明 | [软件授权与价格](./docs/zh-CN/licensing.md) |
 | 公开技术框架、系统工作流程 | [系统架构](./docs/zh-CN/architecture.md) |
 | 用户常见问题：产品、安装、授权、运行、研究与风险 | [常见问题 FAQ](./docs/zh-CN/faq.md) |
 | 运行监控、故障处理和账户安全 | [运行维护与安全](./docs/zh-CN/operations-security.md) |

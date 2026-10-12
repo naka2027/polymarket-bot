@@ -44,6 +44,19 @@
 
 Polymarket and OKX have separate strategy and execution paths. See the [public system architecture](./docs/en/architecture.md) and [OKX strategy overview](./docs/en/okx-strategy.md).
 
+## 💳 Software licensing & pricing
+
+**Device activation is required** to use the installed software. A 7-day trial license is available on request; paid licenses are time-limited. The CNY and USDT figures are separately listed prices, **not daily FX conversions**.
+
+| License | Duration | China (CNY) | International (USDT) |
+| --- | --- | ---: | ---: |
+| Trial | 7 days | Free | Free |
+| Monthly | 30 days | ¥899 | 129 USDT |
+| Quarterly | 90 days | ¥2,399 | 349 USDT |
+| Annual | 365 days | ¥7,999 | 1,199 USDT |
+
+Before purchasing or activating, please review the [Software Licensing Terms & Disclaimer](./docs/en/licensing.md).
+
 ## 🧩 How it works
 
 ```mermaid
@@ -129,6 +142,7 @@ V4 Final + L2 Opt is the current standard strategy recommended for live use. Sta
 | --- | --- |
 | Windows installation, Linux / BT Panel deployment, HTTPS proxying & updates | [Installation & Deployment](./docs/en/deployment.md) |
 | Post-install activation, configuration and reference live-settings screenshot | [Quick Start & Activation](./docs/en/quick-start.md) |
+| Licensing, pricing and disclaimer | [Licensing & Pricing](./docs/en/licensing.md) |
 | Public system design and runtime flow | [System Architecture](./docs/en/architecture.md) |
 | Questions about the product, setup, licensing, trading modes, and risk | [FAQ](./docs/en/faq.md) |
 | Runtime monitoring, troubleshooting, and credentials | [Operations & Security](./docs/en/operations-security.md) |

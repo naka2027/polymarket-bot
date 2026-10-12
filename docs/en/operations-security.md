@@ -66,4 +66,4 @@ Before submitting, remove or obscure private keys, seed phrases, Relayer API Key
 
 ## Activation and licensing
 
-The issued authorization defines activation scope and duration. This repository publishes deployment entry points, docs, and research, not the complete proprietary strategy source. See [`LICENSE`](../../LICENSE).
+For license scope, duration and relevant terms, see the [Software Licensing Terms & Disclaimer](./licensing.md). This repository does not publish the complete proprietary strategy source; see [`LICENSE`](../../LICENSE) for licensing and reserved rights.

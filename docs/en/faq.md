@@ -42,7 +42,7 @@ No. The repository primarily provides public documentation, research reports, in
 
 ### Q6. Is the application completely free? Can I trade as soon as I download it?
 
-Public access to the repository and downloads **does not mean the application has no licensing restrictions**. First use requires device activation; actual authorization scope and duration are determined by the issued license. For fees or terms not published in the current documentation, contact [Telegram @polymarket_b](https://t.me/polymarket_b). Activate, configure, and validate paper mode before considering live operation. [Activation guide](./quick-start.md)
+Device activation is required. A 7-day trial and time-limited paid licenses are available. For prices, terms and the disclaimer, see [Software Licensing](./licensing.md); for setup, see [Quick Start](./quick-start.md).
 
 ## 2. Download, activation, deployment, and updates
 
@@ -94,7 +94,7 @@ That is not necessarily a fault. A window may have no eligible trade, a strategy
 
 ### Q14. Does stopping automation, closing the app, or closing a browser cancel all orders and positions?
 
-**Do not assume so.** Stopping the process does not guarantee that external orders have been cancelled or positions closed. Check the application's order history and the trading venue's open orders, fills, and positions after stopping. [Operations & recovery](./operations-security.md)
+No. Stopping the app or exiting on license expiry does not automatically cancel or close venue-side orders, positions or protective orders. Check their actual status directly at the trading venue. See [Operations](./operations-security.md) and [Licensing](./licensing.md).
 
 <a id="q15"></a>
 

@@ -8,6 +8,7 @@ Begin with [Installation & Deployment](./deployment.md), then follow [Quick Star
 | --- | --- |
 | [Installation & Deployment](./deployment.md) | Windows installation, Linux / BT Panel deployment, reverse proxy, updates & migration |
 | [Quick Start & Activation](./quick-start.md) | Post-install activation, initial configuration, paper-mode checks, and live-settings reference |
+| [Licensing & Pricing](./licensing.md) | Trial, pricing, licensing terms and disclaimer |
 | [FAQ](./faq.md) | Product scope, setup, activation, paper/live, security, research metrics, and common faults |
 | [System Architecture](./architecture.md) | High-level data, signals, risk, sizing, and execution |
 | [Operations & Security](./operations-security.md) | Monitoring, recovery, credentials, and operational quick checks |
